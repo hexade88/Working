@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="WpfGroup.Stavka"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfGroup"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Форма ввода данных о ставке" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="16"/>
+        <Border Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" BorderThickness="1" CornerRadius="2" BorderBrush="#FF383434" Padding="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Должность" Grid.Column="0" Grid.Row="0"></Label>
+                <ComboBox x:Name="ComboBoxPosition" Grid.Column="0" Grid.Row="1" Margin="0,0,2,0"></ComboBox>
+                <Label Content="значение ставки " Grid.Column="1" Grid.Row="0"></Label>
+                <TextBox Grid.Column="1" Grid.Row="1" MaxLength="6" Margin="0,0,2,0" x:Name="Salary"/>
+                <Label Content="Дата действия" Grid.Column="2" Grid.Row="0"></Label>
+                <DatePicker Grid.Column="2" Grid.Row="1" Margin="0,0,2,0" x:Name="Dat"/>
+                <Button Grid.Column="3" Grid.Row="1" Content="Добавить" Click="Button_Click"></Button>
+            </Grid>
+        </Border>
+        <DataGrid Grid.Column="0" Grid.Row="2" Name="DataGridStavka"  CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True"></DataGrid>
+    </Grid>
+</UserControl>
